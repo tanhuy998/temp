@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign up</title>
+	<link rel="stylesheet" type="text/css" href="account.css">
+	<script type="text/javascript" src="account.js"></script>
+</head>
+<body>
+	<div id="avatar"></div>
+
+	<div id="form">
+		<form>
+			<table>
+				<tr>
+					<td>Full Name</td>
+					<td><input type="text" name="" id="fullname" oninput="validate(fullname,/^([A-Z]\w+(\ )*)+$/,showName)"></td>					
+				</tr>
+				<tr class="check">
+					<td><span id="showName"></span></td>
+				</tr>
+				<tr>
+					<td>User Name</td>
+					<td><input type="text" name="" id="username" oninput="validate(username,/^[a-z0-9]*$/,showUsername)"></td>
+				</tr>
+				<tr class="check">
+					<td><span id="showUsername"></span></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="text" name="" id="password" oninput="validate(password,/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,showPassword)"></td>
+				</tr>
+				<tr class="check">
+					<td><span id="showPassword"></span></td>
+				</tr>
+				<tr>
+					<td>Confirm Password</td>
+					<td><input type="text" name="" id="confirm" oninput="checkpass(password,confirm,showConfirm)"></td>
+				</tr>
+				<tr class="check">
+					<td><span id="showConfirm"></span></td>
+				</tr>
+				<tr>
+					<td>E-mail</td>
+					<td><input type="text" name="" id="email" oninput="validate(email,/^[a-z][a-z0-9_\.\-]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/,showEmail)"></td>
+				</tr>
+				<tr class="check">
+					<td><span id="showEmail"></span></td>
+				</tr>
+				<tr>
+					<td>Phone Number</td>
+					<td><input type="text" name="" id="phone" oninput="validate(phone,/^(\+\d{2}|[0])[1-9]{9}$/,showPhone)"></td>
+				</tr>
+				<tr class="check">
+					<td><span id="showPhone"></span></td>
+				</tr>
+				<tr>
+					<td>Nation</td>
+					<td><input type="text" name="" id="Nation" oninput="validate(Nation,/[a-zA-Z]{2,}/,showNation)"></td>
+				</tr>
+				<tr class="check">
+					<td><span id="showNation"></span></td>
+				</tr>
+				<tr>
+					<td>Address</td>
+					<td><input type="text" name="" id="address" oninput="validate(address,/^\d+\s[A-z]+\s[A-z]+/,showAddress)"></td>
+				</tr>
+				<tr class="check">
+					<td><span id="showAddress"></span></td>
+				</tr>
+				<tr>
+					<td>Card Number</td>
+					<td><input type="text" name="" id="cardnumber" oninput="validate(cardnumber,/^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/,showCardNumber)"></td>					
+				</tr>
+				<tr class="check">
+					<td><span id="showCardNumber"></span></td>
+				</tr>
+				<tr>
+					<td>Account Number</td>
+					<td><input type="text" name="" id="accountnumber" oninput="validate(accountnumber,/^[0-9]{7,14}$/,showAccountNumber)"></td>
+				</tr>
+				<tr class="check">
+					<td><span id="showAccountNumber"></span></td>
+				</tr>
+				<tr>
+					<td>Owner Name</td>
+					<td><input type="text" name="" id="owner" oninput="validate(owner,/^([A-Z]\w+(\ )*)+$/,showOwner)"></td>
+				</tr>
+				<tr class="check">
+					<td><span id="showOwner"></span></td>
+				</tr>
+				<tr>
+					<td>Validate date</td>
+					<td><input type="text" name="" id="valid" oninput="validate(valid,/^([0]{1}[1-9]{1})|([1]{1}[0-2]{1})\/[0-9]{2}$/,showValid)"></td>
+				</tr>
+				<tr class="check">
+					<td><span id="showValid"></span></td>
+				</tr>
+				<tr>
+					<td>3 digit</td>
+					<td><input type="text" name="" id="digit" oninput="validate(digit,/^[0-9]{3}$/,showDigit)"></td>
+				</tr>
+				<tr class="check">
+					<td><span id="showDigit"></span></td>
+				</tr>
+			</table>
+			<button id="submit">SUBMIT</button>						
+		</form>
+	</div>
+</body>
+</html>

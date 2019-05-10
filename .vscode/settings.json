@@ -1,0 +1,26 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": false,
+            "connectionTimeout": 30,
+            "database": "orcl",
+            "dialect": "OracleDB",
+            "name": "admin",
+            "password": "1234",
+            "port": 1521,
+            "server": "127.0.0.1",
+            "username": "ADMIN_STOCK"
+        },
+        {
+            "askForPassword": false,
+            "connectionTimeout": 30,
+            "database": "orcl",
+            "dialect": "OracleDB",
+            "name": "trader",
+            "password": "1234",
+            "port": 1521,
+            "server": "127.0.0.1",
+            "username": "TRADER_STOCK"
+        }
+    ]
+}
