@@ -31,18 +31,15 @@
         $model = new AccountModel();
         echo $model->InsertSingle('name', '1234');
 
-        //var_dump($id);
+//         $sql = <<<EOF
+//             CREATE TABLE USERS (
+//                 ID INT PRIMARY KEY,
+//                 NAME CHAR(30) UNIQUE NOT NULL,
+//                 PASS CHAR(100) NOT NULL
+//             );
+// EOF;
     });
-    //Router::Routes()->Add('signin/', 'SigninController:Index');
-
-    //Router::Routes()->Add('new/','TestController:Test');
-
-    //Router::SetRedirect('test/', 'new/');
-
-    //print_r($arr);
-    // echo Router::Routes()->Exist('/foo');
     
-    // echo Parser::ParseUri('/abc?a');
 
     Router::SetHome('home/');
 

@@ -10,6 +10,10 @@
                 printf("Connect failed: %s\n", $mysqli->connect_error);
                 exit();
             }
+            // $base_path = dirname(dirname(__DIR__));
+            // //exit;
+            // $this->conn = new SQLite3($base_path.'\database\test.db');
+            //exit;
         }
 
         public function __destruct() {
@@ -27,6 +31,10 @@
         //     return $stid;
         // }
 
+        public function Execute(string $_sql) {
+            return $this->conn->exec($_sql);
+        }
+
         public function Insert(string $_sql, array $_binding_pairs = []) {
            return $resource = $this->conn->query($_sql);
 
@@ -37,19 +45,35 @@
         }
 
         public function Select(string $_sql, array $_binding_pairs = []) {
-            $res = $this->conn->query($_sql);
-            echo $this->conn->error;
+            $res = $this->conn->multi_query($_sql);
+            //echo $this->conn->error;
             //$res = $this->BindValues($resource, $_binding_pairs);
             
             //oci_execute($res);
             //var_dump($res);
+            //exit;
             $return_val = null;
             //echo oci_num_rows($resource);s
             //echo $res->num_row;
-            while ($row = $res->fetch_assoc()) {
-                //var_dump($row);
-                $return_val[] = $row;
-            }
+
+            do {
+                /* store first result set */
+                if ($result = $this->conn->store_result()) {
+                    while ($row = $result->fetch_assoc()) {
+                        $return_val[] = $row;
+                    }
+                    $result->free();
+                }
+                /* print divider */
+                if ($this->conn->more_results()) {
+                    
+                }
+            } while ($this->conn->next_result());
+
+            // while ($row = $res->fetch_assoc()) {
+            //     //var_dump($row);
+            //     $return_val[] = $row;
+            // }
             
             return $return_val;
         }
